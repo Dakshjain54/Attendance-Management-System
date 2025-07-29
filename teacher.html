@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teacher.css">
+    <link rel="shortcut icon" href="https://media-exp1.licdn.com/dms/image/C560BAQFEl-iX-yyWWg/company-logo_200_200/0?e=2159024400&v=beta&t=s0SrLmRn-KpabkHZtCGbyY-ehSL_92_a1mRgRLp8Szo" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="teacher-header">
+        <div class="header-left">
+            <h1><i class="fas fa-chalkboard-teacher"></i> Teacher Portal</h1>
+        </div>
+        <div class="header-right">
+            <button id="export-excel" class="btn btn-secondary">
+                <i class="fas fa-file-excel"></i> Export to Excel
+            </button>
+            <!-- <button id="logout" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button> -->
+        </div>
+    </header>
+
+    <div class="teacher-container">
+        <nav class="teacher-nav">
+            <button class="nav-btn active" data-target="dashboard">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </button>
+            <button class="nav-btn" data-target="students">
+                <i class="fas fa-users"></i> Manage Students
+            </button>
+            <button class="nav-btn" data-target="attendance">
+                <i class="fas fa-clipboard-check"></i> Mark Attendance
+            </button>
+            <button class="nav-btn" data-target="reports">
+                <i class="fas fa-chart-pie"></i> Reports
+            </button>
+        </nav>
+
+        <main class="teacher-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h3>Total Students</h3>
+                        <p id="total-students">0</p>
+                    </div>
+                    <!-- <div class="stat-card">
+                        <h3>Today's Attendance</h3>
+                        <p id="today-attendance">0%</p>
+                    </div> -->
+                    <!-- <div class="stat-card">
+                        <h3>Classes</h3>
+                        <p id="total-classes">0</p>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Manage Students Section -->
+            <section id="students" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Manage Students</h2>
+                    <button id="add-student" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Add Student
+                    </button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="student-search" placeholder="Search students...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Subjects</th>
+                            <th>Attendance %</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-table">
+                        <!-- Filled by JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Mark Attendance Section -->
+            <section id="attendance" class="content-section">
+                <h2><i class="fas fa-clipboard-check"></i> Mark Attendance</h2>
+                <div class="attendance-controls">
+                    <div class="form-group">
+                        <label for="attendance-class">Class</label>
+                        <select id="attendance-class">
+                            <option value="">Select Class</option>
+                            <option value="AI/ML">AI/ML</option>
+                            <option value="DS">DS</option>
+                            <option value="ETCE">ETCE</option>
+                            <option value="CST">CST</option>
+                            <option value="CSE-A">CSE-A</option>
+                            <option value="CSE-B">CSE-B</option>
+                            <option value="CSE-c">CSE-c</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance-subject">Subject</label>
+                        <select id="attendance-subject">
+                            <option value="">Select Subject</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="BEE">BEE</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="PPS">PPS</option>
+                            <option value="WT">WT</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance-date">Date</label>
+                        <input type="date" id="attendance-date">
+                    </div>
+                    <button id="load-students" class="btn btn-primary">Load Students</button>
+                </div>
+                
+                <div id="attendance-sheet" class="hidden">
+                    <h3 id="attendance-sheet-title"></h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendance-table">
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                    <button id="save-attendance" class="btn btn-success">Save Attendance</button>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="content-section">
+                <h2><i class="fas fa-chart-pie"></i> Reports</h2>
+                <div class="report-controls">
+                    <div class="form-group">
+                        <label for="report-class">B.Tech</label>
+                        <select id="report-class">
+                            <option value="">All Classes</option>
+                            <option value="AI/ML">AI/ML</option>
+                            <option value="DS">DS</option>
+                            <option value="ETCE">ETCE</option>
+                            <option value="CST">CST</option>
+                            <option value="CSE-A">CSE-A</option>
+                            <option value="CSE-B">CSE-B</option>
+                            <option value="CSE-c">CSE-c</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="report-subject">Subject</label>
+                        <select id="report-subject">
+                            <option value="">All Subject</option>
+                            <option value="Math">Math</option>
+                            <option value="Physics">Physics</option>
+                            <option value="BEE">BEE</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="PPS">PPS</option>
+                            <option value="WT">WT</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+                    <button id="generate-report" class="btn btn-primary">Generate Report</button>
+                </div>
+                
+                <div id="report-results">
+                    <canvas id="attendance-chart"></canvas>
+                    <table class="data-table" id="report-table">
+                        <!-- Filled by JavaScript -->
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Add New Student</h2>
+            <form id="student-form">
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Full Name</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-class">Btech</label>
+                    <select id="student-class" required>
+                        <option value="">all classes</option>
+                        <option value="AI/ML">AI/ML</option>
+                        <option value="DS">DS</option>
+                        <option value="ETCE">ETCE</option>
+                        <option value="CST">CST</option>
+                        <option value="CSE-A">CSE-A</option>
+                        <option value="CSE-B">CSE-B</option>
+                        <option value="CSE-c">CSE-C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <!-- <label for="student-email">Email</label>
+                    <input type="email" id="student-email" required> -->
+                </div>
+                <div class="form-group">
+                    <label>Subjects</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="subjects" value="Math"> Math</label>
+                        <label><input type="checkbox" name="subjects" value="Physics"> Physics</label>
+                        <label><input type="checkbox" name="subjects" value="BEE"> BEE</label>
+                        <label><input type="checkbox" name="subjects" value="Chemistry"> Chemistry</label>
+                        <label><input type="checkbox" name="subjects" value="PPS"> PPS</label>
+                        <label><input type="checkbox" name="subjects" value="WT"> WT</label>
+                        <label><input type="checkbox" name="subjects" value="English"> English</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <label for="student-password">Password</label>
+                    <input type="password" id="student-password" required> -->
+                </div>
+                <button type="submit" class="btn btn-primary">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/teacher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</body>
+</html>

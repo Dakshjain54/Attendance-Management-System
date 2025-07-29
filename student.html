@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/student.css">
+    <link rel="shortcut icon" href="https://media-exp1.licdn.com/dms/image/C560BAQFEl-iX-yyWWg/company-logo_200_200/0?e=2159024400&v=beta&t=s0SrLmRn-KpabkHZtCGbyY-ehSL_92_a1mRgRLp8Szo" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="student-header">
+        <div class="header-left">
+            <h1><i class="fas fa-user-graduate"></i> Student Portal</h1>
+        </div>
+        <div class="header-right">
+            <!-- <button id="logout" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button> -->
+        </div>
+    </header>
+
+    <div class="student-container">
+        <div class="student-profile">
+            <div class="profile-card">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-details">
+                    <h2 id="student-name">Loading...</h2>
+                    <p><strong>ID:</strong> <span id="student-id"></span></p>
+                    <p><strong>Class:</strong> <span id="student-class"></span></p>
+                    <!-- <p><strong>Email:</strong> <span id="student-email"></span></p> -->
+                </div>
+            </div>
+            
+            <div class="attendance-summary">
+                <h3><i class="fas fa-chart-line"></i> Overall Attendance</h3>
+                <div class="progress-circle" data-percentage="0" id="overall-attendance">
+                    <svg class="progress-circle-svg" viewBox="0 0 36 36">
+                        <path class="progress-circle-bg"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="progress-circle-fill"
+                            stroke-dasharray="0, 100"
+                            d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text class="progress-circle-text" x="18" y="20.35">0%</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="subject-attendance">
+            <h3><i class="fas fa-book"></i> Subject-wise Attendance</h3>
+            <div class="subject-cards" id="subject-cards">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+
+        <div class="attendance-history">
+            <h3><i class="fas fa-history"></i> Attendance History</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="attendance-history-table">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/student.js"></script>
+</body>
+</html>

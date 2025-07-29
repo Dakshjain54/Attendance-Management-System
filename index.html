@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Attendance System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://media-exp1.licdn.com/dms/image/C560BAQFEl-iX-yyWWg/company-logo_200_200/0?e=2159024400&v=beta&t=s0SrLmRn-KpabkHZtCGbyY-ehSL_92_a1mRgRLp8Szo" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <i class="fas fa-user-graduate"></i>
+            <h1>St. Andrews Institute of Technology and Management</h1>
+        </div>
+        
+        <div class="login-tabs">
+            <button class="tab-btn active" id="teacher-tab">Teacher Login</button>
+            <button class="tab-btn" id="student-tab">Student Login</button>
+        </div>
+        
+        <div class="login-forms">
+            <!-- Teacher Login Form -->
+            <form id="teacher-login" class="active">
+                <div class="form-group">
+                    <label for="teacher-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="teacher-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacher-password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="teacher-password" required>
+                    <!-- <small class="password-hint">Default password: <code>teacher123</code></smal -->
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <!-- Student Login Form -->
+            <form id="student-login">
+                <div class="form-group">
+                    <label for="student-id"><i class="fas fa-id-card"></i> Student ID</label>
+                    <input type="text" id="student-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="student-password" required>
+                    <!-- <small class="password-hint">Default password: <code>teacher123</code></smal -->
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <div class="college"> <h3>Attendance Management System</h3></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
