@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         //     name: 'Rahul Sharma',
         //     class: '10',
         //     email: 'rahul.sharma@college.edu',
-        //     subjects: ['math', 'science', 'english'],
+        //     subjects: ['math', 'science', 'DAALab'],
         //     attendance: {
         //         math: { present: 18, total: 20 },
         //         science: { present: 17, total: 20 },
-        //         english: { present: 19, total: 20 }
+        //         DAALab: { present: 19, total: 20 }
         //     }
         // },
         // {
@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
         //     name: 'Amit Singh',
         //     class: '11',
         //     email: 'amit.singh@college.edu',
-        //     subjects: ['math', 'english', 'history'],
+        //     subjects: ['math', 'DAALab', 'history'],
         //     attendance: {
         //         math: { present: 16, total: 20 },
-        //         english: { present: 18, total: 20 },
+        //         DAALab: { present: 18, total: 20 },
         //         history: { present: 14, total: 20 }
         //     }
         // }
@@ -540,7 +540,7 @@ document.getElementById('generate-report').addEventListener('click', function() 
                 <th>Class</th>
                 ${selectedSubject ? 
                     `<th>${selectedSubject.charAt(0).toUpperCase() + selectedSubject.slice(1)} Attendance</th>` : 
-                    '<th>Math</th><th>Physics</th><th>BEE</th><th>Chemistry</th><th>PPS</th><th>WT</th><th>English</th>'
+                    '<th>DM</th><th>COA</th><th>OS</th><th>IML</th><th>CN</th><th>DAA</th><th>DAALab</th><th>OSLab</th><th>CNLab</th><th>IMLLab</th><th>DT</th><th>UHB</th>'
                 }
             </tr>
         </thead>
@@ -578,20 +578,30 @@ document.getElementById('generate-report').addEventListener('click', function() 
                     <td>${student.id}</td>
                     <td>${student.name}</td>
                     <td>Class ${student.class}</td>
-                    <td>${student.subjects.includes('Math') ? 
-                        `${student.attendance.Math?.present || 0}/${student.attendance.Math?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('Physics') ? 
-                        `${student.attendance.Physics?.present || 0}/${student.attendance.Physics?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('BEE') ? 
-                        `${student.attendance.BEE?.present || 0}/${student.attendance.BEE?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('Chemistry') ? 
-                        `${student.attendance.Chemistry?.present || 0}/${student.attendance.Chemistry?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('PPS') ? 
-                        `${student.attendance.PPS?.present || 0}/${student.attendance.PPS?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('WT') ? 
-                        `${student.attendance.WT?.present || 0}/${student.attendance.WT?.total || 0}` : ''}</td>
-                    <td>${student.subjects.includes('English') ? 
-                        `${student.attendance.English?.present || 0}/${student.attendance.English?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('DM') ? 
+                        `${student.attendance.DM?.present || 0}/${student.attendance.DM?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('COA') ? 
+                        `${student.attendance.COA?.present || 0}/${student.attendance.COA?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('OS') ? 
+                        `${student.attendance.OS?.present || 0}/${student.attendance.OS?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('IML') ? 
+                        `${student.attendance.IML?.present || 0}/${student.attendance.IML?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('CN') ? 
+                        `${student.attendance.CN?.present || 0}/${student.attendance.CN?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('DAA') ? 
+                        `${student.attendance.DAA?.present || 0}/${student.attendance.DAA?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('DAALab') ? 
+                        `${student.attendance.DAALab?.present || 0}/${student.attendance.DAALab?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('OSLab') ? 
+                        `${student.attendance.OSLab?.present || 0}/${student.attendance.OSLab?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('CNLab') ? 
+                        `${student.attendance.CNLab?.present || 0}/${student.attendance.CNLab?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('IMLLab') ? 
+                        `${student.attendance.IMLLab?.present || 0}/${student.attendance.IMLLab?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('DT') ? 
+                        `${student.attendance.DT?.present || 0}/${student.attendance.DT?.total || 0}` : ''}</td>
+                    <td>${student.subjects.includes('UHB') ? 
+                        `${student.attendance.UHB?.present || 0}/${student.attendance.UHB?.total || 0}` : ''}</td>
                 </tr>
             `;
         }
