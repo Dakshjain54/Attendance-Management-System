@@ -26,7 +26,7 @@ This project replaces traditional manual attendance methods with a digital solut
 
 ## 📂 Project Structure
 
-Attendance-Management-System
+Attendance-Management-System                                                                                                                                      
 │
 ├── index.html                                                                                                                                                    
 ├── student.html                                                                                                                                                  
@@ -38,7 +38,7 @@ Attendance-Management-System
 │   └── teacher.css                                                                                                                                               
 │                                                                                                                                                                 
 ├── js                                                                                                                                                            
-│   ├── main.js
+│   ├── main.js                                                                                                                                                   
 │   ├── student.js                                                                                                                                                
 │   └── teacher.js                                                                                                                                                
 │                                                                                                                                                                 
