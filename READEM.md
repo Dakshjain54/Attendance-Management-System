@@ -28,21 +28,21 @@ This project replaces traditional manual attendance methods with a digital solut
 
 Attendance-Management-System
 │
-├── index.html
-├── student.html
-├── teacher.html
-│
-├── css
-│   ├── style.css
-│   ├── student.css
-│   └── teacher.css
-│
-├── js
+├── index.html                                                                                                                                                    
+├── student.html                                                                                                                                                  
+├── teacher.html                                                                                                                                                  
+│                                                                                                                                                                 
+├── css                                                                                                                                                           
+│   ├── style.css                                                                                                                                                 
+│   ├── student.css                                                                                                                                               
+│   └── teacher.css                                                                                                                                               
+│                                                                                                                                                                 
+├── js                                                                                                                                                            
 │   ├── main.js
-│   ├── student.js
-│   └── teacher.js
-│
-└── README.md
+│   ├── student.js                                                                                                                                                
+│   └── teacher.js                                                                                                                                                
+│                                                                                                                                                                 
+└── README.md                                                                                                                                                     
 
 ---
 
